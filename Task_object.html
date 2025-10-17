@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale = 1.0">
+        <meta charset="UTF-8">
+        <title>Array-Object</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            .card{
+                 background: white;
+                 border-radius: 12px;
+                 padding: 30px;
+                 width: 230px;
+                 text-align: center;
+                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                 margin: 20px;
+            }
+            .card img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+           }
+            .card h2{
+                color: #333;
+                margin: 5px;
+
+            }
+            .card p{
+                color: #555;
+                margin: 8px ;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="card" id="idCard">
+            
+        </div>
+
+    <script>
+    // card using object 
+        const person = {
+            name :"Vasanthi",
+            age : 26,
+            Designation : " Web Developer",
+            city : "Chennai",
+            image:"person.jpg",
+
+            details : function(){
+                return "Hello  " +this.name;
+            }
+        }
+    // function calling
+        document.write(person.details());
+
+   //  get a object values in html page
+
+        const card = document.getElementById("idCard");
+         card.innerHTML = `
+            <img src="${person.image}" alt="${person.name}">
+           <h2>${person.name}</h2>
+           <p>Age: ${person.age}</p>
+           <p>Designation: ${person.Designation}</p>
+           <p>City: ${person.city}</p>
+          `;
+    </script>
+    </body>
+</html>
